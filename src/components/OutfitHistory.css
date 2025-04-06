@@ -1,0 +1,460 @@
+/* OutfitHistory.css */
+.outfit-history-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .history-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .history-header h1 {
+    font-size: 2.2rem;
+    color: #9c27b0;
+    margin-bottom: 10px;
+  }
+  
+  .history-header p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .add-history-button {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-history-button:hover {
+    background-color: #7b1fa2;
+  }
+  
+  .history-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3e5f5;
+    border-top: 4px solid #9c27b0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .empty-history {
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .empty-history h3 {
+    color: #9c27b0;
+    margin-bottom: 10px;
+  }
+  
+  .empty-history p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .primary-button {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .primary-button:hover {
+    background-color: #7b1fa2;
+  }
+  
+  .history-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .history-month {
+    margin-bottom: 40px;
+  }
+  
+  .month-heading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f3e5f5;
+    padding-bottom: 10px;
+  }
+  
+  .history-entry {
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .entry-date {
+    background-color: #f3e5f5;
+    padding: 12px 16px;
+    color: #9c27b0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .entry-content {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .entry-outfit {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .outfit-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .history-thumbnail {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+  }
+  
+  .history-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .entry-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .entry-occasion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f0e6f5;
+    color: #9c27b0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    align-self: flex-start;
+  }
+  
+  .entry-notes {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .entry-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 16px;
+  }
+  
+  .icon-action {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .icon-action svg {
+    color: #666;
+  }
+  
+  .edit-action:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .delete-action:hover {
+    background-color: #fee8e9;
+  }
+  
+  .delete-action:hover svg {
+    color: #f44336;
+  }
+  
+  /* Modal Styles */
+  .history-modal {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .history-modal h2 {
+    color: #9c27b0;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input, .form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: #9c27b0;
+    outline: none;
+  }
+  
+  .date-input {
+    position: relative;
+  }
+  
+  .date-input svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  
+  .date-input input {
+    padding-left: 32px;
+  }
+  
+  .outfit-selector {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .no-outfits-message {
+    text-align: center;
+    color: #666;
+    padding: 20px 0;
+  }
+  
+  .outfit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  .outfit-card {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+  }
+  
+  .outfit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .outfit-card.selected {
+    border-color: #9c27b0;
+  }
+  
+  .outfit-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px;
+  }
+  
+  .outfit-thumbnail {
+    width: 60px;
+    height: 60px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .outfit-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .outfit-parts {
+    background-color: #f5f5f5;
+    padding: 8px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .outfit-part-tag {
+    font-size: 0.75rem;
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: capitalize;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .right-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cancel-button {
+    padding: 10px 16px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #666;
+    transition: all 0.3s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .save-button {
+    padding: 10px 16px;
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+  }
+  
+  .save-button:hover {
+    background-color: #7b1fa2;
+  }
+  
+  .save-button:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .delete-button {
+    padding: 10px 16px;
+    background-color: #fff;
+    color: #f44336;
+    border: 1px solid #f44336;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #fee8e9;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .entry-content {
+      flex-direction: column;
+    }
+    
+    .entry-actions {
+      flex-direction: row;
+      margin-left: 0;
+      margin-top: 15px;
+    }
+    
+    .outfit-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .modal-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .right-actions {
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .history-thumbnail {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .outfit-thumbnail {
+      width: 50px;
+      height: 50px;
+    }
+  }

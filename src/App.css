@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&family=Pattaya&display=swap');
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  transition: margin-left 0.3s ease;
+  margin-left: -5px;
+  margin-right: -10px;
+  margin-top: 45px;
+}
+
+.main-content.with-sidebar {
+  margin-left: 190px;
+  margin-right: -10px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content.with-sidebar {
+    margin-left: 0;
+  }
+}
+
+.unauthorized {
+  background-color: #f8bcf1;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: -20px;
+  font-family: 'Pattaya', sans-serif;
+  font-size: xx-large;
+}
+
+.unauthorized h1 {
+  margin-top: -150px;
+  font-weight: normal;
+}
+
+.login-button {
+  background-color: #E0BBE4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: 'Arimo', sans-serif;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.login-button:hover {
+  background-color: #E9CFEC;
+}
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.with-sidebar {
+  margin-left: 250px;
+}
+
+/* Loading spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(189, 107, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: #bd6bff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Welcome page styles */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e6f4f7 0%, #edf1ff 35%, #f9e1ff 100%);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.welcome-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.welcome-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.welcome-subheading {
+  font-size: 1.5rem;
+  color: #53c4c4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-heading {
+  font-size: 3rem;
+  color: #14142b;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-description {
+  color: #4e4b66;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.welcome-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-btn {
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.app-btn.primary {
+  background-color: #f772c5;
+  color: white;
+}
+
+.app-btn.primary:hover {
+  background-color: #e55eb6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(247, 114, 197, 0.3);
+}
+
+.app-btn.secondary {
+  background-color: #53c4c4;
+  color: white;
+}
+
+.app-btn.secondary:hover {
+  background-color: #44a9a9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(83, 196, 196, 0.3);
+}
+
+.welcome-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.app-preview {
+  max-height: 500px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* How It Works Page Styles */
+.how-it-works-container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #e6f4f7 0%, #edf1ff 35%, #f9e1ff 100%);
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.how-it-works-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.hiw-heading {
+  font-size: 2.5rem;
+  color: #14142b;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hiw-intro {
+  color: #4e4b66;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #14142b;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: #4e4b66;
+  line-height: 1.5;
+}
+
+.app-screenshot {
+  margin: 2rem 0 3rem;
+}
+
+.app-screenshot img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .welcome-text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .welcome-heading {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-image {
+    justify-content: center;
+  }
+  
+  .app-preview {
+    max-height: 400px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-heading {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,775 @@
+/* Import playful fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+/* Root variables for vibrant color scheme */
+:root {
+  --color-purple: #9b5de5;
+  --color-pink: #f15bb5;
+  --color-yellow: #fee440;
+  --color-blue: #00bbf9;
+  --color-teal: #00f5d4;
+  --color-neon-green: #70e000;
+  --color-coral: #ff5d8f;
+  --color-orange: #ff9e00;
+}
+
+/* Main container with colorful background */
+.wardrobe-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f0ff 0%, #fff0f5 50%, #f0fff0 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Fun animated pattern background */
+.wardrobe-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(255, 93, 143, 0.05) 0%, transparent 10%),
+    radial-gradient(circle at 85% 30%, rgba(0, 187, 249, 0.05) 0%, transparent 15%),
+    radial-gradient(circle at 30% 65%, rgba(112, 224, 0, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 70% 85%, rgba(254, 228, 64, 0.05) 0%, transparent 15%);
+  animation: pattern-float 20s infinite linear;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+@keyframes pattern-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Colorful floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(5px);
+  z-index: 0;
+  animation: bubble-float 20s infinite ease-in-out;
+}
+
+.bubble-1 {
+  width: 150px;
+  height: 150px;
+  background: var(--color-pink);
+  top: 10%;
+  right: 15%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.bubble-2 {
+  width: 100px;
+  height: 100px;
+  background: var(--color-blue);
+  top: 60%;
+  left: 10%;
+  animation-delay: 5s;
+  animation-duration: 20s;
+}
+
+.bubble-3 {
+  width: 80px;
+  height: 80px;
+  background: var(--color-yellow);
+  bottom: 20%;
+  right: 20%;
+  animation-delay: 10s;
+  animation-duration: 30s;
+}
+
+.bubble-4 {
+  width: 120px;
+  height: 120px;
+  background: var(--color-teal);
+  bottom: 40%;
+  left: 25%;
+  animation-delay: 15s;
+  animation-duration: 22s;
+}
+
+@keyframes bubble-float {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+  50% { transform: translate(30px, -30px) scale(1.2); opacity: 0.15; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+}
+
+/* Wardrobe header */
+.wardrobe-header {
+  padding: 20px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.wardrobe-header h1 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0;
+  color: var(--color-pink);
+}
+
+@keyframes text-shimmer {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Wardrobe content layout */
+.wardrobe-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Vibrant sidebar */
+.wardrobe-sidebar {
+  width: 240px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Rainbow top border */
+.wardrobe-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, 
+    var(--color-purple), 
+    var(--color-pink), 
+    var(--color-yellow), 
+    var(--color-blue), 
+    var(--color-teal), 
+    var(--color-neon-green)
+  );
+  background-size: 200% 100%;
+  animation: rainbow-shift 5s linear infinite;
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Category buttons */
+.category-button {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 5px;
+}
+
+/* Category button colors */
+.category-button:nth-child(1) {
+  background: linear-gradient(45deg, rgba(155, 93, 229, 0.1), rgba(155, 93, 229, 0.2));
+  border-left: 3px solid var(--color-purple);
+}
+
+.category-button:nth-child(2) {
+  background: linear-gradient(45deg, rgba(241, 91, 181, 0.1), rgba(241, 91, 181, 0.2));
+  border-left: 3px solid var(--color-pink);
+}
+
+.category-button:nth-child(3) {
+  background: linear-gradient(45deg, rgba(0, 187, 249, 0.1), rgba(0, 187, 249, 0.2));
+  border-left: 3px solid var(--color-blue);
+}
+
+.category-button:nth-child(4) {
+  background: linear-gradient(45deg, rgba(254, 228, 64, 0.1), rgba(254, 228, 64, 0.2));
+  border-left: 3px solid var(--color-yellow);
+}
+
+/* Fun hover effect */
+.category-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Ripple effect on click */
+.category-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s ease;
+}
+
+.category-button:active::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(50);
+  transition: transform 0.5s ease-out, opacity 0.8s ease-out;
+}
+
+/* Playful active button styling */
+.category-button.active {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-button:nth-child(1).active {
+  background: linear-gradient(45deg, rgba(155, 93, 229, 0.2), rgba(155, 93, 229, 0.3));
+  color: var(--color-purple);
+}
+
+.category-button:nth-child(2).active {
+  background: linear-gradient(45deg, rgba(241, 91, 181, 0.2), rgba(241, 91, 181, 0.3));
+  color: var(--color-pink);
+}
+
+.category-button:nth-child(3).active {
+  background: linear-gradient(45deg, rgba(0, 187, 249, 0.2), rgba(0, 187, 249, 0.3));
+  color: var(--color-blue);
+}
+
+.category-button:nth-child(4).active {
+  background: linear-gradient(45deg, rgba(254, 228, 64, 0.2), rgba(254, 228, 64, 0.3));
+  color: #aa8a00;
+}
+
+/* Icon styling */
+.sidebar-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  transition: all 0.4s ease;
+  filter: saturate(0.7);
+}
+
+.category-button:hover .sidebar-icon,
+.category-button.active .sidebar-icon {
+  filter: saturate(1);
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Main display area */
+.wardrobe-display {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Funky scrollbar */
+.wardrobe-display::-webkit-scrollbar {
+  width: 10px;
+}
+
+.wardrobe-display::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.wardrobe-display::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-purple), var(--color-pink));
+  border-radius: 10px;
+}
+
+.wardrobe-display::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-pink), var(--color-yellow));
+}
+
+/* Dynamic grid layout for items */
+.wardrobe-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  animation: grid-appear 0.8s cubic-bezier(0.26, 0.53, 0.74, 1.48);
+}
+
+@keyframes grid-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Loading container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-top-color: var(--color-purple);
+  border-left-color: var(--color-blue);
+  border-right-color: var(--color-pink);
+  animation: colorful-spinner 1.5s infinite linear;
+}
+
+@keyframes colorful-spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  margin-top: 20px;
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Interactive WardrobeItem styling */
+.wardrobe-item {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding-bottom: 15px;
+  animation: item-appear 0.5s backwards cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 0.8 / 1;
+  z-index: 1;
+}
+
+/* Unique color coding for items */
+.wardrobe-item:nth-child(5n+1)::before {
+  background: linear-gradient(45deg, var(--color-purple), var(--color-pink));
+}
+
+.wardrobe-item:nth-child(5n+2)::before {
+  background: linear-gradient(45deg, var(--color-pink), var(--color-coral));
+}
+
+.wardrobe-item:nth-child(5n+3)::before {
+  background: linear-gradient(45deg, var(--color-blue), var(--color-teal));
+}
+
+.wardrobe-item:nth-child(5n+4)::before {
+  background: linear-gradient(45deg, var(--color-yellow), var(--color-orange));
+}
+
+.wardrobe-item:nth-child(5n+5)::before {
+  background: linear-gradient(45deg, var(--color-teal), var(--color-neon-green));
+}
+
+/* Staggered animations for items */
+.wardrobe-item:nth-child(3n+1) { animation-delay: 0.1s; }
+.wardrobe-item:nth-child(3n+2) { animation-delay: 0.2s; }
+.wardrobe-item:nth-child(3n+3) { animation-delay: 0.3s; }
+
+@keyframes item-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+.wardrobe-item:hover {
+  transform: translateY(-15px) scale(1.05) rotate(2deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Colorful top bar */
+.wardrobe-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 1;
+}
+
+/* Neon glow on hover */
+.wardrobe-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 30px rgba(155, 93, 229, 0) inset;
+  transition: all 0.5s ease;
+  z-index: -1;
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.wardrobe-item:nth-child(5n+1):hover::after {
+  box-shadow: 0 0 30px rgba(155, 93, 229, 0.5) inset;
+}
+
+.wardrobe-item:nth-child(5n+2):hover::after {
+  box-shadow: 0 0 30px rgba(241, 91, 181, 0.5) inset;
+}
+
+.wardrobe-item:nth-child(5n+3):hover::after {
+  box-shadow: 0 0 30px rgba(0, 187, 249, 0.5) inset;
+}
+
+.wardrobe-item:nth-child(5n+4):hover::after {
+  box-shadow: 0 0 30px rgba(254, 228, 64, 0.5) inset;
+}
+
+.wardrobe-item:nth-child(5n+5):hover::after {
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.5) inset;
+}
+
+/* Fun image container with reveal animation */
+.wardrobe-item-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.wardrobe-item-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+  transform-origin: center bottom;
+}
+
+.wardrobe-item:hover .wardrobe-item-image img {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Interactive spotlight effect */
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.wardrobe-item:hover .spotlight {
+  opacity: 0.8;
+  animation: spotlight-move 2s infinite alternate ease-in-out;
+}
+
+@keyframes spotlight-move {
+  0% { background-position: 30% 30%; }
+  100% { background-position: 70% 70%; }
+}
+
+/* Loading state with colorful animation */
+.wardrobe-item-image.loading::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  animation: colorful-spinner 2s infinite ease;
+  position: absolute;
+}
+
+/* Trash delete button - improved visibility */
+.wardrobe-item-remove {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  color: var(--color-coral);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.8);
+}
+
+.wardrobe-item:hover .wardrobe-item-remove {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.wardrobe-item-remove:hover {
+  background: var(--color-coral);
+  color: white;
+  transform: scale(1.2) rotate(180deg);
+  box-shadow: 0 5px 20px rgba(255, 93, 143, 0.3);
+}
+
+/* Empty wardrobe message */
+.empty-wardrobe {
+  text-align: center;
+  padding: 50px 30px;
+  color: #666;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  margin: 40px auto;
+  max-width: 400px;
+  animation: bounce-in 1s cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.empty-wardrobe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, 
+    var(--color-purple), 
+    var(--color-pink), 
+    var(--color-yellow), 
+    var(--color-blue), 
+    var(--color-teal)
+  );
+  background-size: 200% 100%;
+  animation: rainbow-shift 5s linear infinite;
+}
+
+.empty-wardrobe h3 {
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.empty-wardrobe p {
+  color: #777;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Enlarged image overlay */
+.enlarged-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Enlarged image container */
+.enlarged-image-container {
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  animation: scale-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+
+.enlarged-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Close button */
+.close-enlarged-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: var(--color-pink);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.close-enlarged-button:hover {
+  transform: scale(1.1);
+  background: var(--color-coral);
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+  .wardrobe-sidebar {
+    width: 200px;
+    padding: 40px 10px;
+  }
+  
+  .wardrobe-display {
+    padding: 30px;
+  }
+  
+  .wardrobe-items {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wardrobe-content {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .wardrobe-sidebar {
+    width: 100%;
+    padding: 20px 15px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+  
+  .category-button {
+    padding: 12px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .category-button .sidebar-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .wardrobe-display {
+    padding: 20px 15px;
+  }
+  
+  .enlarged-image-container {
+    max-width: 95vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wardrobe-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
